@@ -1,0 +1,5 @@
+<% @entries.each do |entry| %>
+   <div>
+      <%= link_to entry.title, entry.url, target: :_blank %> - <i> published_at <%= time_ago_in_words(entry.published_at) %> ago.</i>
+    </div>
+<% end %>

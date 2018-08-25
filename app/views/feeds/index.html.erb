@@ -1,0 +1,26 @@
+<h1>Feeds</h1>
+<div><%= link_to 'New Feed', new_feed_path %></div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Url</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @feeds.each do |feed| %>
+      <tr>
+        <td><%= feed.title %></td>
+        <td><%= feed.description %></td>
+        <td><%= feed.url %></td>
+        <td>
+          <%= link_to 'Show', feed %>
+          <%= link_to 'Edit', edit_feed_path(feed) %>
+          <%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
